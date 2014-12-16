@@ -3,7 +3,10 @@ require(mosaic)
 require(maps)
 require(mapproj)
 require(RColorBrewer)
-twitter=read.csv("data/eqTwitter")
+require(rJava)
+require(repmis)
+twitter=source_DropboxData(file = "eqTwitter", key = "qc0mmglrkqklfk5", sep = ",", header = TRUE)
+#twitter=read.csv("data/eqTwitter")
 shinyServer(
   
   function(input, output) {
